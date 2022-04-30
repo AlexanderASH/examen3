@@ -1,4 +1,5 @@
 xenial-server-cloudimg-amd64-disk1.img
+bionic-server-cloudimg-amd64.img
 errored.tfstate
 terraform.tfstate.backup
 terraform.tfstate

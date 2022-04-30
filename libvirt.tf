@@ -2,13 +2,11 @@
 
 resource "libvirt_volume" "xenial-qcow2" {
 
-  name = "xenial.qcow2"
+  name = "bionic.qcow2"
 
   pool = "default" # List storage pools using virsh pool-list
 
-  #source = "https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2"
-
-  source = "./xenial-server-cloudimg-amd64-disk1.img"
+  source = "./bionic-server-cloudimg-amd64.img"
 
   format = "qcow2"
 
@@ -32,11 +30,9 @@ resource "libvirt_cloudinit_disk" "commoninit" {
 
   pool = "default" # List storage pools using virsh pool-list
 
-  user_data      = "${data.template_file.user_data.rendered}"
+  user_data = "${data.template_file.user_data.rendered}"
 
 }
-
-
 
 
 
@@ -44,7 +40,7 @@ resource "libvirt_cloudinit_disk" "commoninit" {
 
 resource "libvirt_domain" "xenial" {
 
-  name   = "xenial"
+  name   = "bionic"
 
   memory = "2048"
 
