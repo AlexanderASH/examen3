@@ -1,8 +1,0 @@
-[bionic]
-192.168.122.91 ansible_user=alexanderherbas ansible_ssh_private_key_file=./bionic.key
-
-[bionic:vars]
-http_port=80
-https_port=443
-
-
